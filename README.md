@@ -24,11 +24,11 @@ Disciplina: Computação Gráfica e Realidade Virtual <br/>
 
 ## Divisão de grupos e projetos
 
-+ Grupo 1: Cena de Natureza com Controle de Ambiente
-+ Grupo 2: Museu de Arte com Galeria Interativa:
-+ Grupo 3: Casa Interativa com Controle de Iluminação:
-+ Grupo 4: Labirinto 3D com Desafios Interativos:
-+ Grupo 5: Jogo de Pintura 3D com Ferramentas Interativas:
++ Grupo 1: Cena de Natureza com Controle de Ambiente (Nicolas)
++ Grupo 2: Museu de Arte com Galeria Interativa: (Ismael)
++ Grupo 3: Casa Interativa com Controle de Iluminação: (Breno)
++ Grupo 4: Labirinto 3D com Desafios Interativos: (Lucas)
++ Grupo 5: Jogo de Pintura 3D com Ferramentas Interativas: (Antony)
 
 ## Projetos
 
