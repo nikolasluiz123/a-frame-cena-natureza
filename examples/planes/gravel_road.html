@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Cascalho</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <a-assets environment>
+        <img id="planeTexture" src="../textures/gravel-road/texture.jpg" alt="">
+        <img id="planeHeightMap" src="../textures/gravel-road/normal_map.png" alt="">
+    </a-assets>
+
+    <a-camera>
+        <a-cursor></a-cursor>
+    </a-camera>
+
+    <a-plane rotation="-90 0 0"
+             src="#planeTexture"
+             normal-map="#planeHeightMap"
+             normal-texture-repeat="10 10"
+             normal-scale="10 -10"
+             repeat="10 10"
+             width="100"
+             height="100"></a-plane>
+</a-scene>
+</body>
+</html>
