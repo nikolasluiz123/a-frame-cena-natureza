@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chuva com A-Frame</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity camera position="0 1.6 0" look-controls></a-entity>
+
+      <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
+
+      <a-entity id="rain"></a-entity>
+
+      <script>
+        AFRAME.registerComponent('rain-maker', {
+          init: function () {
+            for (var i = 0; i < 100; i++) {
+              var rainDrop = document.createElement('a-entity');
+              rainDrop.setAttribute('geometry', 'primitive: sphere; radius: 0.02');
+              rainDrop.setAttribute('material', 'color: #7EC8E3');
+              rainDrop.setAttribute('position', {
+                x: Math.random() * 10 - 5,
+                y: Math.random() * 5 + 5,
+                z: Math.random() * 10 - 5
+              });
+              rainDrop.setAttribute('animation', {
+                property: 'position',
+                dur: 100 + Math.random() * 2500,
+                easing: 'linear',
+                to: { x: rainDrop.getAttribute('position').x, y: -2, z: rainDrop.getAttribute('position').z },
+                loop: true
+              });
+              this.el.appendChild(rainDrop);
+            }
+          }
+        });
+
+        document.querySelector('#rain').setAttribute('rain-maker', '');
+      </script>
+    </a-scene>
+  </body>
+</html>
