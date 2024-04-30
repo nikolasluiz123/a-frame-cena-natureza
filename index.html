@@ -16,9 +16,28 @@
 
     <!-- Lib que fornece um ambiente de desenvolvimento -->
     <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+
+    <script src="js/fire.js"></script>
 </head>
 <body>
-<a-scene>
+<a-scene environment>
+    <a-assets>
+        <a-asset-items id="arvore1" src="objects/fogueira.glb"></a-asset-items>
+        <a-asset-items id="arvore2" src="objects/fogueira.glb"></a-asset-items>
+
+        <a-asset-items id="fogueira" src="objects/fogueira.glb"></a-asset-items>
+    </a-assets>
+
+    <a-entity gltf-model="#fogueira"
+              position="0.0 0.0 0.0"
+              shadow="receive: false; cast: false"></a-entity>
+
+    <a-entity
+            fire="particles: 1000;"
+            position="0.5 0.0 0.5"
+            sound="src: url(sound/fire.mp3); autoplay: true; loop: true; refDistance: 1.5; rolloffFactor: 5.0; volume: 1.0; distanceModel: exponential;"
+    ></a-entity>
+
     <a-camera>
         <a-cursor></a-cursor>
     </a-camera>
