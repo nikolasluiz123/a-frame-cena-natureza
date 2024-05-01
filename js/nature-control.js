@@ -48,8 +48,6 @@ function generateTrees() {
     const treeModel1 = treeModels[randomPosition1];
     const treeModel2 = treeModels[randomPosition2];
 
-    const spherePosition = sphere.getAttribute("position")
-
     for (var i = 0; i < 5; i++) {
         for (var j = 0; j < 5; j++) {
 

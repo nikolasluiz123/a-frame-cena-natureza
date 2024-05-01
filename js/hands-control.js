@@ -19,7 +19,7 @@ function addHandsListeners() {
             } else if(e.target.id == "nightSphere") {
                 climate.showGradativeNight();
             } else if(e.target.id == "natureSphere") {
-                nature.generateNatureComponents(e.target);
+                nature.generateNatureComponents();
             }
         });
 
