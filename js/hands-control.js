@@ -1,4 +1,5 @@
 import * as climate from "./climate-control.js"
+import * as nature from "./nature-control.js"
 
 function addHandsListeners() {
     const elements = Array.from(document.getElementsByClassName('grabbable-obj'));
@@ -14,9 +15,11 @@ function addHandsListeners() {
                 climate.showDust();
             } else if(e.target.id == "daySphere") {
                 climate.stopSphereSound("nightSphere")
-                climate.showGradativeDay()
+                climate.showGradativeDay();
             } else if(e.target.id == "nightSphere") {
-                climate.showGradativeNight()
+                climate.showGradativeNight();
+            } else if(e.target.id == "natureSphere") {
+                nature.generateNatureComponents(e.target);
             }
         });
 

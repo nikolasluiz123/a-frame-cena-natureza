@@ -32,8 +32,17 @@
         <a-asset-items id="snowSphereModel" src="objects/snow_sphere.glb"></a-asset-items>
         <a-asset-items id="dustSphereModel" src="objects/dust_sphere.glb"></a-asset-items>
         <a-asset-items id="rainSphereModel" src="objects/rain_sphere.glb"></a-asset-items>
+        <a-asset-items id="natureSphereModel" src="objects/nature_sphere.glb"></a-asset-items>
 
-        <audio id="daySound" src="sound/day_sound.mp3" preload="metadata" ></audio>
+        <a-asset-items id="treeModel1" src="objects/tree_1.glb"></a-asset-items>
+        <a-asset-items id="treeModel2" src="objects/tree_2.glb"></a-asset-items>
+        <a-asset-items id="treeModel3" src="objects/tree_3.glb"></a-asset-items>
+        <a-asset-items id="treeModel4" src="objects/tree_4.glb"></a-asset-items>
+        <a-asset-items id="treeModel5" src="objects/tree_5.glb"></a-asset-items>
+        <a-asset-items id="treeModel6" src="objects/tree_6.glb"></a-asset-items>
+        <a-asset-items id="treeModel7" src="objects/tree_7.glb"></a-asset-items>
+
+        <audio id="daySound" src="sound/day_sound.mp3" preload="metadata"></audio>
         <audio id="nightSound" src="sound/night_sound.mp3" preload="metadata"></audio>
         <audio id="campfireSound" src="sound/fire.mp3" preload="metadata"></audio>
     </a-assets>
@@ -100,6 +109,13 @@
               scale="0.5 0.5"
               class="grabbable-obj"
               sound="src: #nightSound; loop: true"
+              grabbable></a-entity>
+
+    <a-entity id="natureSphere"
+              gltf-model="#natureSphereModel"
+              position="6.5 2 -3"
+              scale="0.5 0.5"
+              class="grabbable-obj"
               grabbable></a-entity>
 
     <!--    <a-entity gltf-model="#campfire"-->
