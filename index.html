@@ -44,6 +44,9 @@
 
         <audio id="daySound" src="sound/day_sound.mp3" preload="metadata"></audio>
         <audio id="nightSound" src="sound/night_sound.mp3" preload="metadata"></audio>
+        <audio id="dustSound" src="sound/dust_sound.mp3" preload="metadata"></audio>
+        <audio id="rainSound" src="sound/rain_sound.mp3" preload="metadata"></audio>
+        <audio id="snowSound" src="sound/snow_sound.mp3" preload="metadata"></audio>
         <audio id="campfireSound" src="sound/fire.mp3" preload="metadata"></audio>
     </a-assets>
 
@@ -79,6 +82,7 @@
               position="-1 2 -3"
               scale="0.5 0.5"
               class="grabbable-obj"
+              sound="src: #snowSound; loop: true"
               grabbable></a-entity>
 
     <a-entity id="rainSphere"
@@ -86,6 +90,7 @@
               position="0.5 2 -3"
               scale="0.5 0.5"
               class="grabbable-obj"
+              sound="src: #rainSound; loop: true"
               grabbable></a-entity>
 
     <a-entity id="dustSphere"
@@ -93,6 +98,7 @@
               position="2 2 -3"
               scale="0.5 0.5"
               class="grabbable-obj"
+              sound="src: #dustSound; loop: true"
               grabbable></a-entity>
 
     <a-entity id="daySphere"

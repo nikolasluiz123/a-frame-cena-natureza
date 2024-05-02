@@ -1,31 +1,37 @@
 function showSnow() {
     const elements = getSingularNaturalElements();
     showSpecificElement("snow", elements);
+    playSphereSound("snowSphere");
 }
 
 function hideSnow() {
     const elements = getSingularNaturalElements();
     hideSpecificElement("snow", elements);
+    stopSphereSound("snowSphere");
 }
 
 function showRain() {
     const elements = getSingularNaturalElements();
     showSpecificElement("rain", elements);
+    playSphereSound("rainSphere");
 }
 
 function hideRain() {
     const elements = getSingularNaturalElements();
     hideSpecificElement("rain", elements);
+    stopSphereSound("rainSphere");
 }
 
 function showDust() {
     const elements = getSingularNaturalElements();
     showSpecificElement("dust", elements);
+    playSphereSound("dustSphere");
 }
 
 function hideDust() {
     const elements = getSingularNaturalElements();
     hideSpecificElement("dust", elements);
+    stopSphereSound("dustSphere");
 }
 
 function showDay() {

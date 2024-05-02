@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Testes da Física</title>
+
+    <!-- Libs padrões do a-frame -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+    <!-- Lib JS para fazer interações com os controles de oculos VR e movimentar objetos da cena -->
+    <script src="https://unpkg.com/super-hands@^3.0.4/dist/super-hands.min.js"></script>
+
+    <!-- Lib JS para adicionar física a objetos da cena -->
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
+
+    <!-- Lib que fornece um ambiente de desenvolvimento -->
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+
+    <!-- Lib que possibilita fazer efeitos que tem relação com partículas, tipo chuva, fogo e coisas do gênero-->
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-particle-system-component@master/dist/aframe-particle-system-component.min.js"></script>
+
+</head>
+<body>
+<a-scene physics="debug: true">
+    <a-assets>
+
+    </a-assets>
+
+    <a-camera>
+        <a-cursor></a-cursor>
+    </a-camera>
+
+    <a-entity id="env" environment></a-entity>
+
+    <a-box position="5 1 0" width="1" height="1" depth="1"></a-box>
+
+</a-scene>
+</body>
+</html>
