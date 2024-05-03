@@ -66,10 +66,10 @@ function generateTrees() {
                 z: startZ + j * spacingZ
             });
 
-            scene.appendChild(entity); // Adiciona a árvore à cena
+            scene.appendChild(entity);
             index++
-        }
-    }
+        }
+    }
 }
 
 function deleteTreeEntities() {
