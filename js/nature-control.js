@@ -39,20 +39,43 @@ function configureEnvironment() {
 }
 
 function generateTrees() {
-    const assets = document.querySelector('a-assets').getElementsByTagName('a-asset-items');
-    const treeModels = Array.from(assets).filter((a) => a.id.startsWith("treeModel"));
+    const assets = document.querySelector('a-assets').querySelectorAll('a-asset-items');
+    const treeModelIds = Array.from(assets).filter((a) => a.id.startsWith("treeModel")).map((t) => "#" + t.getAttribute("id"));
+    const scene = document.getElementById("scene")
 
-    var randomPosition1 = Math.floor(Math.random() * treeModels.length);
-    var randomPosition2 = Math.floor(Math.random() * treeModels.length);
+    const spacingX = 10;
+    const spacingZ = 10;
+    const numTreesX = 6;
+    const numTreesZ = 6;
 
-    const treeModel1 = treeModels[randomPosition1];
-    const treeModel2 = treeModels[randomPosition2];
+    const startX = -spacingX * (numTreesX - 1) / 2;
+    const startZ = -spacingZ * (numTreesZ - 1) / 2;
 
-    for (var i = 0; i < 5; i++) {
-        for (var j = 0; j < 5; j++) {
+    let index = 0
 
-        }
-    }
+    for (let i = 0; i < numTreesX; i++) {
+        for (let j = 0; j < numTreesZ; j++) {
+            const randomPosition = Math.floor(Math.random() * treeModelIds.length);
+
+            let entity = document.createElement("a-entity")
+            entity.setAttribute('id', "entityTree" + index);
+            entity.setAttribute("gltf-model", treeModelIds[randomPosition])
+            entity.setAttribute('position', {
+                x: startX + i * spacingX,
+                y: 0,
+                z: startZ + j * spacingZ
+            });
+
+            scene.appendChild(entity); // Adiciona a árvore à cena
+            index++
+        }
+    }
 }
 
-export { generateNatureComponents };
+function deleteTreeEntities() {
+    const trees = Array.from(document.getElementsByTagName("a-entity")).filter((e) => e.id.startsWith("entityTree"))
+    trees.forEach((t) => {t.remove()})
+}
+
+
+export { generateNatureComponents , deleteTreeEntities};
