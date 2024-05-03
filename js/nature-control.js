@@ -78,10 +78,4 @@ function generateTrees() {
     }
 }
 
-function deleteTreeEntities() {
-    const trees = Array.from(document.getElementsByTagName("a-entity")).filter((e) => e.id.startsWith("entityTree"))
-    trees.forEach((t) => {t.remove()})
-}
-
-
 export { showTrees , hideTrees, configureEnvironment, generateTrees };
