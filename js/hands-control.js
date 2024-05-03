@@ -19,7 +19,8 @@ function addHandsListeners() {
             } else if(e.target.id == "nightSphere") {
                 climate.showGradativeNight();
             } else if(e.target.id == "natureSphere") {
-                nature.generateNatureComponents();
+                nature.configureEnvironment();
+                nature.showTrees();
             }
         });
 
@@ -31,7 +32,7 @@ function addHandsListeners() {
             } else if(e.target.id == "dustSphere") {
                 climate.hideDust();
             } else if (e.target.id == "natureSphere") {
-                nature.deleteTreeEntities();
+                nature.hideTrees();
                 climate.showDay();
             }
         });

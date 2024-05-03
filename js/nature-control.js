@@ -1,6 +1,11 @@
-function generateNatureComponents(sphere) {
-    configureEnvironment();
-    generateTrees();
+function showTrees() {
+    const trees = Array.from(document.getElementsByTagName("a-entity")).filter((e) => e.id.startsWith("entityTree"))
+    trees.forEach((t) => { t.setAttribute('visible', true) })
+}
+
+function hideTrees() {
+    const trees = Array.from(document.getElementsByTagName("a-entity")).filter((e) => e.id.startsWith("entityTree"))
+    trees.forEach((t) => { t.setAttribute('visible', false) })
 }
 
 function configureEnvironment() {
@@ -23,8 +28,8 @@ function configureEnvironment() {
     environmentAttribute.ground = "noise";
     environmentAttribute.groundYScale = "4"
     environmentAttribute.groundTexture = "walkernoise";
-    environmentAttribute.groundColor = "#3F8C5B";
-    environmentAttribute.groundColor2 = "#52B475";
+    environmentAttribute.groundColor = "#8B5A2B";
+    environmentAttribute.groundColor2 = "#556B2F";
     environmentAttribute.dressing = "none";
     environmentAttribute.dressingAmount = "10"
     environmentAttribute.dressingColor = "#795449";
@@ -45,8 +50,8 @@ function generateTrees() {
 
     const spacingX = 10;
     const spacingZ = 10;
-    const numTreesX = 6;
-    const numTreesZ = 6;
+    const numTreesX = 8;
+    const numTreesZ = 8;
 
     const startX = -spacingX * (numTreesX - 1) / 2;
     const startZ = -spacingZ * (numTreesZ - 1) / 2;
@@ -59,6 +64,7 @@ function generateTrees() {
 
             let entity = document.createElement("a-entity")
             entity.setAttribute('id', "entityTree" + index);
+            entity.setAttribute('visible', false)
             entity.setAttribute("gltf-model", treeModelIds[randomPosition])
             entity.setAttribute('position', {
                 x: startX + i * spacingX,
@@ -78,4 +84,4 @@ function deleteTreeEntities() {
 }
 
 
-export { generateNatureComponents , deleteTreeEntities};
+export { showTrees , hideTrees, configureEnvironment, generateTrees };
