@@ -30,6 +30,9 @@ function addHandsListeners() {
                 climate.hideRain();
             } else if(e.target.id == "dustSphere") {
                 climate.hideDust();
+            } else if (e.target.id == "natureSphere") {
+                nature.deleteTreeEntities();
+                climate.showDay();
             }
         });
     });
