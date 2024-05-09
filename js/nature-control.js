@@ -64,6 +64,8 @@ function generateTrees() {
 
             let entity = document.createElement("a-entity")
             entity.setAttribute('id', "entityTree" + index);
+            entity.setAttribute("class", "grabbable-obj")
+            entity.setAttribute("grabbable", "");
             entity.setAttribute('visible', false)
             entity.setAttribute("gltf-model", treeModelIds[randomPosition])
             entity.setAttribute('position', {
@@ -78,4 +80,32 @@ function generateTrees() {
     }
 }
 
-export { showTrees , hideTrees, configureEnvironment, generateTrees };
+function animateTree(entity) {
+    let angle = 0;
+    let maxAngle = 3;
+    const swingSpeed = 0.01;
+    const duration = 3000;
+    let startTimestamp = null;
+
+    function animate(timestamp) {
+        if (!startTimestamp) {
+            startTimestamp = timestamp;
+        }
+
+        const progress = timestamp - startTimestamp;
+        maxAngle = 3 - (progress / duration) * 10;
+        if (maxAngle <= 0) {
+            maxAngle = 0;
+            return;
+        }
+
+        angle = Math.sin(progress * swingSpeed) * maxAngle;
+        entity.setAttribute('rotation', { x: angle, y: entity.getAttribute('rotation').y, z: entity.getAttribute('rotation').z });
+        requestAnimationFrame(animate);
+    }
+
+    startTimestamp = null;
+    requestAnimationFrame(animate);
+}
+
+export { showTrees , hideTrees, configureEnvironment, generateTrees, animateTree };
