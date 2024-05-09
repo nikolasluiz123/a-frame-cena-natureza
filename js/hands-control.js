@@ -21,6 +21,8 @@ function addHandsListeners() {
             } else if(e.target.id == "natureSphere") {
                 nature.configureEnvironment();
                 nature.showTrees();
+            } else if(e.target.id.startsWith("entityTree")) {
+                nature.animateTree(e.target)
             }
         });
 
